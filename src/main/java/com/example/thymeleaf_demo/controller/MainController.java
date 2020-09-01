@@ -37,9 +37,7 @@ public class MainController {
     @PostMapping("/car")
     public String createCar(@Valid @ModelAttribute("car") DtoCar car, BindingResult bindingResult) {
 
-        bindingResult.addError(new FieldError("car", "brand", "Required and no blank spaces"));
-
-        System.out.println("bindingResult has Errors: " + bindingResult.hasErrors());
+        //System.out.println("bindingResult has Errors: " + bindingResult.hasErrors());
 
         if (bindingResult.hasErrors()) {
             return "carForm";

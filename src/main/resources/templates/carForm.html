@@ -2,17 +2,18 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link rel="stylesheet" href="css/site.css">
     <title>Create Car</title>
 </head>
 <body>
 <form action="/car" method="post" th:object="${car}">
     <div>
         <input type="text" th:field="*{brand}" placeholder="Brand">
-        <span th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Brand Error</span>
+        <span class="error_text" th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Brand Error</span>
     </div>
     <div>
         <input type="text" th:field="*{modelName}" placeholder="Model">
-        <span th:if="${#fields.hasErrors('modelName')}" th:errors="*{modelName}">Model Error</span>
+        <span class="error_text" th:if="${#fields.hasErrors('modelName')}" th:errors="*{modelName}">Model Error</span>
     </div>
     <input type="submit" value="Create">
 </form>
