@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Main index</title>
+</head>
+<body>
+    <h1>List of cars</h1>
+    <ol>
+        <li th:each="aCar : ${carlist}">
+            <span th:text="${aCar}"></span>
+        </li>
+    </ol>
+</body>
+</html>
